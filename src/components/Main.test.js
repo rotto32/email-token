@@ -10,4 +10,10 @@ describe('Main', ()=>{
     expect(component).toMatchSnapshot();
   });
 
+  it('should have an input for an email', () =>{
+    const component = shallow(<Main />);
+    expect(component.find('input type="email"').exists()).toBe(true);
+  });
+
+
 })

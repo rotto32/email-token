@@ -1,0 +1,19 @@
+{
+  "name": "email-token",
+  "version": "1.0.0",
+  "description": "Take home for HealthFirst",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rotto32/email-token.git"
+  },
+  "author": "Rachael Otto",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/rotto32/email-token/issues"
+  },
+  "homepage": "https://github.com/rotto32/email-token#readme"
+}

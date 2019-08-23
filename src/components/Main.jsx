@@ -51,7 +51,7 @@ class Main extends React.PureComponent {
           <input type="email" name="email" value={this.state.email} onChange={this.handleChange}/> 
           <button onClick={this.state.handleClear}>Clear</button>
           <br />
-          <button type="button" onClick={this.handleSubmit}>Generate Token</button>
+          <button type="button" id="submit" onClick={this.handleSubmit}>Generate Token</button>
         </form>
         Token:
         <div>

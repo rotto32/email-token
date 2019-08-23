@@ -34,8 +34,8 @@ describe('Main', ()=>{
     const component = shallow(<Main />);
     component
       .find({ name: "email" })
-      .simulate("change", { target: { name: "email", value: "test" } });
-    component.find('button').simulate('click');
+      .simulate("change", { target: { name: "email", value: "random" } });
+    component.find('#submit').simulate('click', {preventDefault: ()=>{}});
     expect(component.state('token')).not.toBe('');
   })
 

@@ -18,10 +18,9 @@ app.post('/token', (req, res) => {
   const token = req.body.token;
   addTokenToDB.addTokenToDB(email, token, (err) => {
     if (err) {
-      console.log(err);
       res.status('500').end();
     } else {
-      res.status('201').send(token);
+      res.status('201').end();
     }
   });
 });

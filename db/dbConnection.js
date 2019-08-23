@@ -13,7 +13,8 @@ const addTokenToDB = (email, token, cb) => {
         if (queryErr) {
           cb(queryErr);
         }
-        cb(null, token);
+
+        cb(null);
       },
     );
   });

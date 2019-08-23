@@ -1,5 +1,6 @@
 const generateToken = (email, cb) => {
-  const token = "test";
+  const token = '';
+  
   cb(token);
 };
 

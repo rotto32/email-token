@@ -4,9 +4,11 @@
 
 1. Make sure MySQL @5.7 is installed and running on your computer, then run ```mysql -u root < db/schema.sql``` from the root directory of the repo.
 
-2. Run ```npm run build```
+2. Run ```npm install```
 
-3. Run ```npm start```
+3. Run ```npm run build:prod```
+
+4. Run ```npm start```
 
 
 ### About
@@ -38,10 +40,15 @@ Another issue with this microservice is data duplication. Currently there is no 
 
 As such I've left it with the wholly unsatisfatory problem of data duplication, considering that the lesser of the two evils given that hardrive memory is cheap, and queries times over networks can vary. 
 
+I also neglected to have my server listen on port 80, which is reserved for all HTTP requests, and overwriting it might have broken parts of my development environment. To resolve this I would spin up a docker container for the application and map port 3000 (which is what the application is currently listening on) to port 80. 
+
 
 ### Further Steps
 
 Given more time I'd like to come back to this and replace the MySQL database with a PostgreSQL or other database which would have more query control. This would allow me to use a much more compact schema where the token could be the primary key, and would also most likely speed up read query times, which would be relevant when avoiding data duplication.
+
+
+Once I got the PostgreSQL database in place I would like to create a Docker container with this application and map port 3000 to 80 so that the application could listen on port 80.
 
 
 

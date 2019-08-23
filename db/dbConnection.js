@@ -7,11 +7,10 @@ connection.connect((connectionErr) => {
   if (connectionErr) console.log(connectionErr);
 });
 
-
 const addTokenToDB = (email, token, cb) => {
   connection.query(
     `INSERT INTO email_tokens (email, token) VALUES ('${email}', '${token}');`,
-    (queryErr, results) => {
+    (queryErr) => {
       if (queryErr) {
         cb(queryErr);
       }

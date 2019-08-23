@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from "axios";
+import sha1 from "sha1";
 
 class Main extends React.PureComponent {
   constructor() {
@@ -22,16 +23,15 @@ class Main extends React.PureComponent {
 
   handleSubmit(e) {
     e.preventDefault();
-    axios.post('/token', {email: this.state.email})
-      .catch((err)=>{
-        console.log(err);
-      })
-      .then((res) => {
-        this.setState({
-          token: res.data,
+    this.setState({
+      token: sha1(this.state.email)
+    }, () => {
+      axios
+        .post("/token", { email: this.state.email, token: this.state.token })
+        .catch(err => {
+          console.log(err);
         })
-      })
-
+    })
   }
 
   render () {

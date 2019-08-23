@@ -2,7 +2,6 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 
-const generateToken = require('./tokenGeneration.js');
 const addTokenToDB = require('../db/dbConnection.js');
 
 const app = express();
@@ -16,15 +15,14 @@ app.use(bodyParser.json());
 
 app.post('/token', (req, res) => {
   const email = req.body.email;
-  generateToken.generateToken(email, (token) => {
-    addTokenToDB.addTokenToDB(email, token, (err) => {
-      if (err) {
-        console.log(err);
-        res.status('500').end();
-      } else {
-        res.status('201').send(token);
-      }
-    });
+  const token = req.body.token;
+  addTokenToDB.addTokenToDB(email, token, (err) => {
+    if (err) {
+      console.log(err);
+      res.status('500').end();
+    } else {
+      res.status('201').send(token);
+    }
   });
 });
 

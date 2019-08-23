@@ -31333,9 +31333,13 @@ function (_React$PureComponent) {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       e.preventDefault();
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('localhost:80/token', this.state.email)["catch"](function (err) {
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('localhost:80/token', {
+        email: this.state.email
+      })["catch"](function (err) {
         console.log(err);
-      }).then(resp = {//set state with token
+      }).then(function (res) {
+        //set state with token
+        console.log(res);
       });
     }
   }, {

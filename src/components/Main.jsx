@@ -1,5 +1,4 @@
 import React from 'react';
-
 import axios from "axios";
 
 class Main extends React.PureComponent {
@@ -22,12 +21,13 @@ class Main extends React.PureComponent {
 
   handleSubmit(e) {
     e.preventDefault();
-    axios.post('localhost:80/token', this.state.email)
+    axios.post('localhost:80/token', {email: this.state.email})
       .catch((err)=>{
         console.log(err);
       })
-      .then((resp)={
+      .then((res) => {
         //set state with token
+        console.log(res)
       })
 
   }

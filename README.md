@@ -10,6 +10,8 @@
 
 4. Run ```npm start```
 
+To test run ```rpm test```
+
 
 ### About
 This application takes in an email address and outputs a token unique to that email address which can then be placed in links to authorize users.

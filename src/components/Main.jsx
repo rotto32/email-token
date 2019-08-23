@@ -26,7 +26,7 @@ class Main extends React.PureComponent {
         console.log(err);
       })
       .then((res) => {
-        console.log(token.body);
+        console.log(res.body);
         this.setState({
           token: res.body,
         })

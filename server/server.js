@@ -17,9 +17,12 @@ app.use(bodyParser.json());
 app.post('/token', (req, res) => {
   const email = req.body.email;
   generateToken.generateToken(email, (token) => {
-    addTokenToDB.addTokenToDB(email, token, (err, dbResult) => {
-      if (err) res.status(500).end();
-      res.send(token);
+    addTokenToDB.addTokenToDB(email, token, (err, dbToken) => {
+      if (err) {
+        res.send('500');
+      } else {
+        res.send(dbToken);
+      }
     });
   });
 });

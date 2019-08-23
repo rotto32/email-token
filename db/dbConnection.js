@@ -5,18 +5,15 @@ const connection = mysql.createConnection(connectionInfo);
 
 const addTokenToDB = (email, token, cb) => {
   connection.connect((connectionErr) => {
-    if (connectionErr) {
-      console.log('error connecting to db', connectionErr);
-      cb(connectionErr);
-    }
+    if (connectionErr) cb(connectionErr);
+
     connection.query(
       `INSERT INTO email_tokens (email, token) VALUES ('${email}', '${token}');`,
-      (queryErr, results) => {
+      (queryErr) => {
         if (queryErr) {
-          console.log('query error', queryErr);
           cb(queryErr);
         }
-        cb(null, results);
+        cb(null, token);
       },
     );
   });

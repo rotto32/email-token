@@ -21,13 +21,15 @@ class Main extends React.PureComponent {
 
   handleSubmit(e) {
     e.preventDefault();
-    axios.post('localhost:80/token', {email: this.state.email})
+    axios.post('/token', {email: this.state.email})
       .catch((err)=>{
         console.log(err);
       })
       .then((res) => {
-        //set state with token
-        console.log(res)
+        console.log(token.body);
+        this.setState({
+          token: res.body,
+        })
       })
 
   }

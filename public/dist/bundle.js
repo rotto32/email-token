@@ -31332,14 +31332,19 @@ function (_React$PureComponent) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
+      var _this2 = this;
+
       e.preventDefault();
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('localhost:80/token', {
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/token', {
         email: this.state.email
       })["catch"](function (err) {
         console.log(err);
       }).then(function (res) {
-        //set state with token
-        console.log(res);
+        console.log(token.body);
+
+        _this2.setState({
+          token: res.body
+        });
       });
     }
   }, {

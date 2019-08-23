@@ -33,9 +33,7 @@ Ultimately this is a microservice that provides convienence, rather than securit
 
 I used a SHA-1 npm package to generate the token based on the email primarily for the convienence. However, depending on how the token was processed on the other end of things, one could implement a slightly more secure system by verifying the email address against the stored hash, but again even this wouldn't be that secure. 
 
-For the purposes of efficiency I decided to unconventionally return data in a post request. 
 
-My other options were generating the token on the front end, or sending a post request to add the email to the database with the token still generated on the server side, and then sending a get request to get the token from the database.
 
 ### Further Steps
 

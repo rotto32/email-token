@@ -33676,6 +33676,7 @@ function (_React$PureComponent) {
       token: ''
     };
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    _this.handleClear = _this.handleClear.bind(_assertThisInitialized(_this));
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -33686,6 +33687,14 @@ function (_React$PureComponent) {
       var _this$setState;
 
       this.setState((_this$setState = {}, _defineProperty(_this$setState, e.target.name, e.target.value), _defineProperty(_this$setState, "token", ''), _this$setState));
+    }
+  }, {
+    key: "handleClear",
+    value: function handleClear(e) {
+      e.preventDefault();
+      this.setState({
+        email: ''
+      });
     }
   }, {
     key: "handleSubmit",
@@ -33710,8 +33719,12 @@ function (_React$PureComponent) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Generate Email Token"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, "Enter email: ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "email",
         name: "email",
+        value: this.state.email,
         onChange: this.handleChange
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.state.handleClear
+      }, "Clear"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "button",
         onClick: this.handleSubmit
       }, "Generate Token")), "Token:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.state.token));
     }

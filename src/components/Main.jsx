@@ -11,6 +11,7 @@ class Main extends React.PureComponent {
       token: ''
     }
     this.handleChange = this.handleChange.bind(this);
+    this.handleClear = this.handleClear.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -18,6 +19,13 @@ class Main extends React.PureComponent {
     this.setState({
       [e.target.name] : e.target.value,
       token: ''
+    })
+  }
+
+  handleClear(e) {
+    e.preventDefault();
+    this.setState({
+      email:''
     })
   }
 
@@ -40,9 +48,10 @@ class Main extends React.PureComponent {
         <h1>Generate Email Token</h1>
         <form>
           Enter email: <br />
-          <input type="email" name="email" onChange={this.handleChange}/>
+          <input type="email" name="email" value={this.state.email} onChange={this.handleChange}/> 
+          <button onClick={this.state.handleClear}>Clear</button>
           <br />
-          <button onClick={this.handleSubmit}>Generate Token</button>
+          <button type="button" onClick={this.handleSubmit}>Generate Token</button>
         </form>
         Token:
         <div>

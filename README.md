@@ -41,7 +41,7 @@ As such I've left it with the wholly unsatisfatory problem of data duplication, 
 
 ### Further Steps
 
-Given more time I'd like to come back to this and replace the MySQL database with a PostgreSQL or other database which would have more query control. This would allow me to use a much more compact schema where the token could be the primary key, and would also most likely speed up read query times (not that there are any).
+Given more time I'd like to come back to this and replace the MySQL database with a PostgreSQL or other database which would have more query control. This would allow me to use a much more compact schema where the token could be the primary key, and would also most likely speed up read query times, which would be relevant when avoiding data duplication.
 
 
 

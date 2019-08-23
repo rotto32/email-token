@@ -31327,7 +31327,9 @@ function (_React$PureComponent) {
   _createClass(Main, [{
     key: "handleChange",
     value: function handleChange(e) {
-      this.setState(_defineProperty({}, e.target.name, e.target.value));
+      var _this$setState;
+
+      this.setState((_this$setState = {}, _defineProperty(_this$setState, e.target.name, e.target.value), _defineProperty(_this$setState, "token", ''), _this$setState));
     }
   }, {
     key: "handleSubmit",

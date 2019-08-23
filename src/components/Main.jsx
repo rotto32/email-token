@@ -16,6 +16,7 @@ class Main extends React.PureComponent {
   handleChange(e) {
     this.setState({
       [e.target.name] : e.target.value,
+      token: ''
     })
   }
 

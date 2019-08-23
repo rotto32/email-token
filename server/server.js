@@ -19,6 +19,7 @@ app.post('/token', (req, res) => {
   generateToken.generateToken(email, (token) => {
     addTokenToDB.addTokenToDB(email, token, (err) => {
       if (err) {
+        console.log(err);
         res.status('500').end();
       } else {
         res.status('201').send(token);

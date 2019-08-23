@@ -31340,8 +31340,6 @@ function (_React$PureComponent) {
       })["catch"](function (err) {
         console.log(err);
       }).then(function (res) {
-        console.log(res.data);
-
         _this2.setState({
           token: res.data
         });

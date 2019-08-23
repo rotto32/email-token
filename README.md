@@ -15,14 +15,17 @@ This application takes in an email address and outputs a token unique to that em
 ### Details
 #### Front-end
 React, Jest/Enzyme for testing
+
 The front end takes a single input, which on change stores the value in state. When the button is clicked a token is generated and rendered on the page, and a post request is made to the API to add the email and token to the database. 
 
 #### Server 
 Node/Express
+
 Only used a single route in this application, /token. The front-end sends a single post request.
 
 #### Database
 MySQL
+
 Simple single-table database structure to store email and token along with unique key.
 
 ### Considerations
